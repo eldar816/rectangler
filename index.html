@@ -1,0 +1,60 @@
+<!-- used minimal bootstrap to design the page -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css">
+        <title>Rectangle generator</title>
+        <link rel="shortcut icon" type="image/png" href=".\images\favicon.png"/>
+    </head>
+<body onload="_init()">
+    <div class="_container">
+        <!-- canvas row -->
+        <div class="_canvas">
+            <canvas id="myCanvas" width="800" height="600" onclick="coordCheck(event)"></canvas>
+        </div>
+        <!-- texts row -->
+        <h1>Rectangle generator</h1>
+        <h5>Instructions manual:</h5>
+        <p>&#8277; You must enter numerical values only.<br>
+        &#8277; Fields cannot stay empty.<br>
+        &#8277; Canvas size is limited to (x)800 on (y)600.<br>
+        &#8277; Rectangle size is limited to 1-200 width by 1-200 height.<br>
+        &#8277; You cannot use negative values.<br>
+        &#8277; Default X and Y coordinates are (0, 0).<br>
+        &#8277; Click on the screen to get the exact X + Y coordinate values.<br></p>
+            <!-- form row -->
+            <form class="form-inline" action="javascript:;">
+                <div class="form-group">
+                    <div class="col-xs-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">W</span>
+                            <input class="form-control" type="text" id="_W" placeholder="Width value">
+                        </div>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">H</span>
+                            <input class="form-control" type="text" id="_H" placeholder="Height value">
+                        </div>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">X</span>
+                            <input class="form-control" type="text" id="_X" placeholder="X coordinate value">
+                        </div>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Y</span>
+                            <input class="form-control" type="text" id="_Y" placeholder="Y coordinate value">
+                        </div>
+                    </div>
+            </form>
+        </div><br>
+            <!-- button row -->
+            <button class="btn btn-primary" id="draw_btn" onclick="drawSqr()">Calculate</button>
+            <button class="btn btn-danger" id="clr_btn" onclick="clrSqr()">Clear</button>
+            <button class="btn btn-success" id="reset_btn" onclick="resetInput()">Reset</button>
+            <button class="btn btn-warning" id="rnd_btn" onclick="rndSqr()">Random</button><br><br>
+            <label id="_res"></label><br>
+            <label id="_mousecoord"></label><br>
+    </div>
+<!-- script includement -->
+<script src="script.js"></script>
+</body>
+</html>
